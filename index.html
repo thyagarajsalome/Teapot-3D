@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Teapot Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      #canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <nav class="bg-gray-800 p-4 absolute w-full z-10">
+      <div class="container mx-auto">
+        <h1 class="text-xl font-bold">Teapot-3D</h1>
+      </div>
+    </nav>
+
+    <main class="relative h-screen">
+      <canvas id="canvas"></canvas>
+
+      <!-- Radial Menu -->
+      <div id="radialMenu" class="radial-menu hidden">
+        <button>Product</button>
+        <button>Description</button>
+        <button>Brand</button>
+        <button>Manufacturer</button>
+        <button>Price</button>
+        <button>Buy</button>
+        <button>Color</button>
+        <button>Material</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

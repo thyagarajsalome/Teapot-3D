@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Teapot Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
@@ -22,14 +21,131 @@
   <body class="bg-gray-900 text-white">
     <nav class="bg-gray-800 p-4 absolute w-full z-10">
       <div class="container mx-auto">
-        <h1 class="text-xl font-bold">Teapot-3D</h1>
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <h1 class="text-xl font-bold">Teapot-3D</h1>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="hover:text-gray-300 transition">About</a>
+
+            <!-- Services Dropdown -->
+            <div class="relative group">
+              <button class="hover:text-gray-300 transition flex items-center">
+                Services
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 mt-2 w-48 bg-gray-700 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >3D Web Interactive</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >3D Product Showcase</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >3D Product Visualization</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >Web Development</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="hover:text-gray-300 transition">Contact</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="md:hidden text-white focus:outline-none"
+            id="menuButton"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobileMenu">
+          <div class="pt-4 pb-3 space-y-3">
+            <a href="#" class="block hover:bg-gray-700 px-3 py-2 rounded-md"
+              >About</a
+            >
+
+            <!-- Mobile Services Dropdown -->
+            <div class="relative">
+              <button
+                class="w-full text-left hover:bg-gray-700 px-3 py-2 rounded-md flex items-center justify-between"
+                id="mobileServicesButton"
+              >
+                Services
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="hidden bg-gray-700 rounded-md mt-1"
+                id="mobileServicesMenu"
+              >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >3D Web Interactive</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >3D Product Showcase</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >3D Product Visualization</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-600"
+                  >Web Development</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="block hover:bg-gray-700 px-3 py-2 rounded-md"
+              >Contact</a
+            >
+          </div>
+        </div>
       </div>
     </nav>
 
     <main class="relative h-screen">
       <canvas id="canvas"></canvas>
-
-      <!-- Radial Menu -->
       <div id="radialMenu" class="radial-menu hidden">
         <button>Product</button>
         <button>Description</button>
@@ -42,6 +158,24 @@
         <button id="cancelBtn">Cancel</button>
       </div>
     </main>
+
+    <script>
+      // Mobile menu toggle
+      const menuButton = document.getElementById("menuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileServicesButton = document.getElementById(
+        "mobileServicesButton"
+      );
+      const mobileServicesMenu = document.getElementById("mobileServicesMenu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileServicesButton.addEventListener("click", () => {
+        mobileServicesMenu.classList.toggle("hidden");
+      });
+    </script>
 
     <script type="module" src="/main.js"></script>
   </body>

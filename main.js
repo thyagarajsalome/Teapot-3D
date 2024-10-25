@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 
 // Define color options
+// Define color options
 const teapotColors = [
   { color: "#8b0000", name: "dark red" },
   { color: "#683434", name: "brown" },
@@ -15,16 +16,27 @@ const teapotColors = [
   { color: "#222222", name: "black" },
   { color: "#ececec", name: "white" },
   { color: "#800080", name: "purple" },
-  { color: "#ffd700", name: "gold" },
-  { color: "#c0c0c0", name: "silver" },
   { color: "#40826d", name: "teal" },
   { color: "#ff1493", name: "pink" },
   { color: "#4b0082", name: "indigo" },
   { color: "#8b4513", name: "saddle brown" },
-  { color: "#daa520", name: "goldenrod" },
   { color: "#48d1cc", name: "turquoise" },
   { color: "#ff4500", name: "coral" },
   { color: "#9400d3", name: "violet" },
+  { color: "#e6e6fa", name: "lavender" },
+  { color: "#f0e68c", name: "khaki" },
+  { color: "#98fb98", name: "mint" },
+  // New completely different colors:
+  { color: "#556b2f", name: "olive" },
+  { color: "#8a2be2", name: "blue violet" },
+  { color: "#7b3f00", name: "chocolate" },
+  { color: "#1e90ff", name: "dodger blue" },
+  { color: "#c71585", name: "medium violet red" },
+  { color: "#006400", name: "dark green" },
+  { color: "#ff00ff", name: "magenta" },
+  { color: "#cd5c5c", name: "indian red" },
+  { color: "#191970", name: "midnight blue" },
+  { color: "#bdb76b", name: "dark khaki" },
 ];
 
 class TeapotViewer {
